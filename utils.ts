@@ -4,7 +4,7 @@ export async function prompt(message?: string): Promise<string> {
         Deno.stdout.write(new TextEncoder().encode(message));
     }
 
-    const data: string = new TextDecoder().decode(await Deno.readAll(Deno.stdin));
+    const data: string = new TextDecoder().decode(await Deno.readAll(Deno.stdin)).trim();
 
     console.log();
 
